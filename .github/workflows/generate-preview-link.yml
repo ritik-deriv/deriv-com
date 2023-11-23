@@ -44,6 +44,7 @@ jobs:
             - name: Retrieve pull request
               id: pr_information
               run: |
+                  echo "Workflow Head Branch - ${{ github.event.workflow_run.head_branch }}"
                   echo "issue_number=$(cat .pr/NR)" >> $GITHUB_OUTPUT
 
             - name: 'Generate action link comment'
